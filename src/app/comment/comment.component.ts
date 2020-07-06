@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-comment',
@@ -8,7 +7,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 })
 export class CommentComponent implements OnInit {
 
-  constructor(public domSanitizer: DomSanitizer) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

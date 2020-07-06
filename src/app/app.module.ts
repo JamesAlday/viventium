@@ -7,16 +7,22 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { CommentComponent } from './comment/comment.component';
 
+import { SafeHtmlPipe } from "./safeHtml.pipe";
+
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    CommentComponent
+    CommentComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    SafeHtmlPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
