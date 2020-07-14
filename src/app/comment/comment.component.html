@@ -1,4 +1,4 @@
-<li class="media" *ngFor="let comment of comments" [formGroup]="commentForm">
+<li class="media" *ngFor="let comment of comments">
 	<div class="media-body">
 		<strong class="text-primary">{{ comment.title }}</strong>
 		<p [innerHTML]="comment.text | safeHtml"></p>

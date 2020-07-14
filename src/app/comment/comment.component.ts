@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-comment',
@@ -7,15 +6,15 @@ import { DataService } from '../data.service';
   styleUrls: ['./comment.component.sass']
 })
 export class CommentComponent implements OnInit {
-  public comments;
+  @Input('comments') comments;
 
-  constructor(private dataService: DataService) {}
+  constructor() {}
 
   ngOnInit(): void {
-		this.comments = this.dataService.getComments();		
+		
   }
 
-  updateComments(comment) {
-  	this.comments = comment;
-  }
+  // updateComments(comment) {
+  // 	this.comments = comment;
+  // }
 }
