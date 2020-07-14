@@ -1,6 +1,6 @@
 export interface Comment {
 	id: number;
 	title: string;
-	text: string;
+	comment: string;
 	tags: any;
 }

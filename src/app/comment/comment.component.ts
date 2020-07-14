@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-comment',
@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CommentComponent implements OnInit {
   @Input('comments') comments;
+  @Output() deleted = new EventEmitter<number>();
+  @Output() edit = new EventEmitter<number>();
 
   constructor() {}
 
@@ -14,7 +16,11 @@ export class CommentComponent implements OnInit {
 		
   }
 
-  // updateComments(comment) {
-  // 	this.comments = comment;
-  // }
+  deleteComment(id): void {
+		this.deleted.emit(id);
+	}
+
+	editComment(id): void {
+		this.edit.emit(id);
+	}
 }

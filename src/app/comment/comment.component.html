@@ -1,7 +1,16 @@
 <li class="media" *ngFor="let comment of comments">
 	<div class="media-body">
-		<strong class="text-primary">{{ comment.title }}</strong>
-		<p [innerHTML]="comment.text | safeHtml"></p>
+		<div class="comment-title">
+			<span class=""><strong class="text-primary">{{ comment.title }}</strong></span>
+			<a (click)="deleteComment(comment.id)" class="pull-right">
+				<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+			</a>
+			<a (click)="editComment(comment.id)" class="pull-right">
+				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</a>
+		</div>
+		
+		<p [innerHTML]="comment.comment | safeHtml"></p>
 	
 	<div class="media-body">
 		Tags: {{ comment.tags.join(', ') }}
