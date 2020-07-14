@@ -13,6 +13,9 @@
 		<p [innerHTML]="comment.comment | safeHtml"></p>
 	
 	<div class="media-body">
-		Tags: {{ comment.tags.join(', ') }}
+		Tags:
+		<span class="tags-wrapper" *ngFor="let tag of comment.tags">
+			<span class="label label-info">{{tag}}</span>
+		</span>
 	</div></div>
 </li>
